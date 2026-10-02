@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BeautyBodega - maquillaje, skincare y accesorios.">
+  <title>BeautyBodega | Maquillaje & Skincare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#inicio"><span>♡</span>Beauty<span>Bodega</span><small>MAQUILLAJE & SKINCARE</small></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    <nav id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <input id="searchInput" type="search" placeholder="Buscar productos, marcas...">
+      <button class="icon-btn" id="cartBtn" aria-label="Carrito">🛒 <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Tu bodega de maquillaje</p>
+        <h1>TODO EL MAKEUP<br><strong>QUE BUSCAS</strong></h1>
+        <p>Maquillaje, skincare y accesorios de tus marcas favoritas.</p>
+        <button class="primary" data-action="catalogo">Ver catálogo →</button>
+      </div>
+      <div class="hero-products" aria-label="Productos destacados">
+        <span>Trendy</span><span>Maybelline</span><span>Vogue</span><span>Samy</span>
+        <div class="fake-bag">BEAUTY<br>BAG</div>
+        <div class="floating-product p1">TRENDY</div>
+        <div class="floating-product p2">FIT me!</div>
+        <div class="floating-product p3">SAMY</div>
+      </div>
+    </section>
+
+    <section class="category-grid section" id="categorias">
+      <button class="category-card face" data-category="Rostro"><span>◉</span><h2>ROSTRO</h2><p>Bases · Correctores · Polvos · Rubores</p><b>Ver productos →</b></button>
+      <button class="category-card eyes" data-category="Ojos"><span>◉</span><h2>OJOS</h2><p>Sombras · Máscaras · Delineadores · Cejas</p><b>Ver productos →</b></button>
+      <button class="category-card lips" data-category="Labios"><span>◉</span><h2>LABIOS</h2><p>Labiales · Gloss · Tintas · Perfiladores</p><b>Ver productos →</b></button>
+      <button class="category-card skin" data-category="Skincare"><span>◉</span><h2>SKINCARE</h2><p>Limpiadores · Hidratantes · Sérums</p><b>Ver productos →</b></button>
+    </section>
+
+    <section class="brands section" id="marcas">
+      <div class="section-title"><div><p class="eyebrow">Multimarca</p><h2>Tus marcas favoritas</h2></div><p>Haz clic en una marca para ver todo su catálogo.</p></div>
+      <div class="brand-list" id="brandList"></div>
+    </section>
+
+    <section class="promo-grid section">
+      <article class="promo pink">
+        <p>MAQUILLAJE Y SKINCARE</p><h2>De todo para tu<br>Beauty Bag</h2><button class="secondary" data-action="catalogo">Comprar ahora →</button>
+      </article>
+      <article class="promo dark">
+        <p>LO MÁS BUSCADO</p><h2>Los más<br>vendidos</h2><button class="secondary" data-action="bestsellers">Ver más →</button>
+      </article>
+      <article class="promo soft" id="ofertas">
+        <p>PRECIOS DE BODEGA</p><h2>Ofertas y<br>promociones</h2><button class="secondary" data-action="ofertas">Ver ofertas →</button>
+      </article>
+    </section>
+
+    <section class="location-contact section" id="contacto">
+      <article class="location-box">
+        <p class="eyebrow">Visítanos</p><h2>Estamos en el centro de Bogotá 📍</h2>
+        <p>Encuentra maquillaje, skincare y accesorios en nuestra bodega física.</p>
+        <button class="primary" id="mapBtn">Cómo llegar →</button>
+      </article>
+      <article class="contact-box">
+        <p class="eyebrow">¿Necesitas ayuda?</p><h2>Contáctanos</h2>
+        <p>Escríbenos por WhatsApp o llámanos para consultar disponibilidad.</p>
+        <div class="contact-actions">
+          <a class="primary" href="https://wa.me/573001234567" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="secondary dark-btn" href="tel:+573001234567">📞 Llamar</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="catalog section" id="catalogo">
+      <div class="catalog-head">
+        <div><p class="eyebrow">Catálogo</p><h2 id="catalogTitle">Todos los productos</h2></div>
+        <button class="clear-btn" id="clearFilters">Limpiar filtros</button>
+      </div>
+      <div class="catalog-layout">
+        <aside class="filters">
+          <h3>Categorías</h3>
+          <div id="categoryFilters"></div>
+          <h3>Marcas</h3>
+          <div id="brandFilters"></div>
+          <h3>Precio</h3>
+          <label><input type="checkbox" data-price="0-20000"> $0 - $20.000</label>
+          <label><input type="checkbox" data-price="20001-40000"> $20.001 - $40.000</label>
+          <label><input type="checkbox" data-price="40001-60000"> $40.001 - $60.000</label>
+          <label><input type="checkbox" data-price="60001-999999"> $60.001+</label>
+        </aside>
+        <div class="products-area">
+          <div class="results-bar"><span id="resultCount">0 productos</span><select id="sortSelect"><option value="default">Ordenar</option><option value="priceAsc">Precio menor</option><option value="priceDesc">Precio mayor</option><option value="name">Nombre</option></select></div>
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-head"><h2>Tu carrito</h2><button id="closeCart">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <a class="primary checkout" href="https://wa.me/573001234567" target="_blank" rel="noopener">Consultar pedido por WhatsApp</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noopener">💬 Contáctanos <small>+57 300 123 4567</small></a>
+  <footer><p>© 2026 BeautyBodega · Maquillaje & Skincare</p><p>Centro de Bogotá · Envíos a todo el país</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
